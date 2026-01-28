@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Börsen-Analysetool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>📊 Börsen-Analysetool</h1>
+            <p class="subtitle">Fundamentalanalyse & Scoring-System</p>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="tabs">
+            <button class="tab-btn active" data-tab="search">Suche</button>
+            <button class="tab-btn" data-tab="watchlist">Watchlist</button>
+            <button class="tab-btn" data-tab="index">Index-Analyse</button>
+        </nav>
+
+        <!-- Search Tab -->
+        <div id="search-tab" class="tab-content active">
+            <div class="search-box">
+                <input type="text" id="stock-search" placeholder="Unternehmen oder Symbol eingeben (z.B. AAPL, MSFT, SAP.DE)">
+                <button id="search-btn">Analysieren</button>
+            </div>
+            <div id="search-results"></div>
+        </div>
+
+        <!-- Watchlist Tab -->
+        <div id="watchlist-tab" class="tab-content">
+            <div class="watchlist-header">
+                <h2>Meine Watchlist</h2>
+                <button id="clear-watchlist">Liste leeren</button>
+            </div>
+            <div id="watchlist-content"></div>
+        </div>
+
+        <!-- Index Analysis Tab -->
+        <div id="index-tab" class="tab-content">
+            <div class="index-selector">
+                <h2>Index-Analyse</h2>
+                <select id="index-select">
+                    <option value="">Index auswählen...</option>
+                    <option value="dax">DAX 40</option>
+                    <option value="sp500">S&P 500 (Top 50)</option>
+                    <option value="nasdaq">NASDAQ 100 (Top 50)</option>
+                </select>
+                <button id="analyze-index-btn">Analysieren</button>
+            </div>
+            <div id="index-results"></div>
+        </div>
+
+        <!-- Company Details Modal -->
+        <div id="company-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div id="company-details"></div>
+            </div>
+        </div>
+
+        <!-- Loading Spinner -->
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Lade Daten...</p>
+        </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="scoring.js"></script>
+    <script src="api.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
