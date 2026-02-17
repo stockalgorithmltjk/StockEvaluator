@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Evaluator - Fundamentalanalyse</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>📈 Stock Evaluator</h1>
+            <p class="subtitle">Fundamentalanalyse mit Yahoo Finance</p>
+        </header>
+
+        <div class="main-container">
+            <!-- Left Panel: Search & Watchlist -->
+            <div class="panel">
+                <div class="search-section">
+                    <h2>🔍 Aktie Suchen</h2>
+                    <div class="search-box">
+                        <input type="text" id="stock-input" placeholder="Symbol eingeben (z.B. AAPL, MSFT, SAP.DE)">
+                        <button class="btn" id="search-btn">Suchen</button>
+                    </div>
+                    <div id="search-error" class="error"></div>
+                    <div id="search-loading" class="loading">
+                        <div class="spinner"></div>
+                        <p>Lade Daten...</p>
+                    </div>
+                </div>
+
+                <hr style="margin: 30px 0; border: none; border-top: 2px solid #f0f0f0;">
+
+                <div class="watchlist-section">
+                    <h2>⭐ Watchlist</h2>
+                    <button class="btn" id="clear-watchlist-btn" style="padding: 8px 15px; font-size: 0.9em;">Löschen</button>
+                </div>
+                <div id="watchlist" class="watchlist-items">
+                    <div class="empty-state">
+                        <div class="empty-state-icon">📋</div>
+                        <p>Noch keine Aktien in der Watchlist</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Panel: Results -->
+            <div id="results-panel" class="panel result-container" style="display: none;">
+                <div id="stock-result"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
